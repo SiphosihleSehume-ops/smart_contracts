@@ -1,0 +1,15 @@
+{
+  "contracts/StorageFactory.sol": {
+    "./SimpleContract.sol": "contracts/SimpleContract.sol",
+    "__sources__": {
+      "contracts/StorageFactory.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.27;\n\nimport \"./SimpleContract.sol\";\n\n// This contract serves as a `factory` for creating othert smart contracts\ncontract StorageFactory {\n    SimpleContract[] public simpleContract;\n\n    function createSimpleContract() public {\n        simpleContract = new SimpleContract();\n    }\n}",
+        "file": "contracts/StorageFactory.sol"
+      },
+      "contracts/SimpleContract.sol": {
+        "content": "// SPDX-License-Identifier:MIT\npragma solidity ^0.8.27;\n\ncontract SimpleContract {\n\n    constructor() {}\n}",
+        "file": "contracts/SimpleContract.sol"
+      }
+    }
+  }
+}

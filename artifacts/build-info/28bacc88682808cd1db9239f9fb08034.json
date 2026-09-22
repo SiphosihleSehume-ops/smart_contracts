@@ -1,0 +1,380 @@
+{
+	"id": "28bacc88682808cd1db9239f9fb08034",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.37",
+	"solcLongVersion": "0.8.37+commit.f401782d",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/SimpleContract.sol": {
+				"content": "// SPDX-License-Identifier:MIT\npragma solidity ^0.8.27;\n\ncontract SimpleContract {\n\n    constructor() {}\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"contracts": {
+			"contracts/SimpleContract.sol": {
+				"SimpleContract": {
+					"abi": [
+						{
+							"inputs": [],
+							"stateMutability": "nonpayable",
+							"type": "constructor"
+						}
+					],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"contracts/SimpleContract.sol\":57:106  contract SimpleContract {... */\n  mstore(0x40, 0x80)\n    /* \"contracts/SimpleContract.sol\":88:104  constructor() {} */\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  revert(0x00, 0x00)\ntag_1:\n  pop\n    /* \"contracts/SimpleContract.sol\":57:106  contract SimpleContract {... */\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"contracts/SimpleContract.sol\":57:106  contract SimpleContract {... */\n      mstore(0x40, 0x80)\n      revert(0x00, 0x00)\n\n    auxdata: 0xa264697066735822122083ab30e7094b2f79c37f8b0fe13dc2ce3626cdbfcedb9e5cd6e66a097b87432064736f6c63430008250033\n}\n",
+						"bytecode": {
+							"functionDebugData": {
+								"@_5": {
+									"entryPoint": null,
+									"id": 5,
+									"parameterSlots": 0,
+									"returnSlots": 0
+								}
+							},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "6080604052348015600e575f5ffd5b50603e80601a5f395ff3fe60806040525f5ffdfea264697066735822122083ab30e7094b2f79c37f8b0fe13dc2ce3626cdbfcedb9e5cd6e66a097b87432064736f6c63430008250033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xE JUMPI PUSH0 PUSH0 REVERT JUMPDEST POP PUSH1 0x3E DUP1 PUSH1 0x1A PUSH0 CODECOPY PUSH0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 DUP4 0xAB ADDRESS 0xE7 MULMOD SLOTNUM 0x2F PUSH26 0xC37F8B0FE13DC2CE3626CDBFCEDB9E5CD6E66A097B8743206473 PUSH16 0x6C634300082500330000000000000000 ",
+							"sourceMap": "57:49:0:-:0;;;88:16;;;;;;;;;;57:49;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "60806040525f5ffdfea264697066735822122083ab30e7094b2f79c37f8b0fe13dc2ce3626cdbfcedb9e5cd6e66a097b87432064736f6c63430008250033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 DUP4 0xAB ADDRESS 0xE7 MULMOD SLOTNUM 0x2F PUSH26 0xC37F8B0FE13DC2CE3626CDBFCEDB9E5CD6E66A097B8743206473 PUSH16 0x6C634300082500330000000000000000 ",
+							"sourceMap": "57:49:0:-:0;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "12400",
+								"executionCost": "64",
+								"totalCost": "12464"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 57,
+									"end": 106,
+									"name": "PUSH",
+									"source": 0,
+									"value": "80"
+								},
+								{
+									"begin": 57,
+									"end": 106,
+									"name": "PUSH",
+									"source": 0,
+									"value": "40"
+								},
+								{
+									"begin": 57,
+									"end": 106,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 88,
+									"end": 104,
+									"name": "CALLVALUE",
+									"source": 0
+								},
+								{
+									"begin": 88,
+									"end": 104,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 88,
+									"end": 104,
+									"name": "ISZERO",
+									"source": 0
+								},
+								{
+									"begin": 88,
+									"end": 104,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 88,
+									"end": 104,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": 88,
+									"end": 104,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 88,
+									"end": 104,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 88,
+									"end": 104,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 88,
+									"end": 104,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 88,
+									"end": 104,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 88,
+									"end": 104,
+									"name": "POP",
+									"source": 0
+								},
+								{
+									"begin": 57,
+									"end": 106,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 57,
+									"end": 106,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 57,
+									"end": 106,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 57,
+									"end": 106,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 57,
+									"end": 106,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 57,
+									"end": 106,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 57,
+									"end": 106,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a264697066735822122083ab30e7094b2f79c37f8b0fe13dc2ce3626cdbfcedb9e5cd6e66a097b87432064736f6c63430008250033",
+									".code": [
+										{
+											"begin": 57,
+											"end": 106,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 57,
+											"end": 106,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 57,
+											"end": 106,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 57,
+											"end": 106,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 57,
+											"end": 106,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 57,
+											"end": 106,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							},
+							"sourceList": [
+								"contracts/SimpleContract.sol",
+								"#utility.yul"
+							]
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.37+commit.f401782d\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/SimpleContract.sol\":\"SimpleContract\"},\"evmVersion\":\"osaka\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/SimpleContract.sol\":{\"keccak256\":\"0x7d8b5bb4ef7868f63bc7dd1db769ef153792014e8d7818c8bc524891488e103c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://44cf050957e99fe205ee57f00f7fc214b988a24d0322a62d647ed5aaf454ffcd\",\"dweb:/ipfs/QmQmHsGJKn71MGKugzqLQe2SuestbpjkTWGhDsz2NbhYLd\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"contracts/SimpleContract.sol": {
+				"ast": {
+					"absolutePath": "contracts/SimpleContract.sol",
+					"exportedSymbols": {
+						"SimpleContract": [
+							6
+						]
+					},
+					"id": 7,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".27"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "31:24:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "SimpleContract",
+							"contractDependencies": [],
+							"contractKind": "contract",
+							"fullyImplemented": true,
+							"id": 6,
+							"linearizedBaseContracts": [
+								6
+							],
+							"name": "SimpleContract",
+							"nameLocation": "66:14:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"body": {
+										"id": 4,
+										"nodeType": "Block",
+										"src": "102:2:0",
+										"statements": []
+									},
+									"id": 5,
+									"implemented": true,
+									"kind": "constructor",
+									"modifiers": [],
+									"name": "",
+									"nameLocation": "-1:-1:-1",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 2,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "99:2:0"
+									},
+									"returnParameters": {
+										"id": 3,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "102:0:0"
+									},
+									"scope": 6,
+									"src": "88:16:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "public"
+								}
+							],
+							"scope": 7,
+							"src": "57:49:0",
+							"usedErrors": [],
+							"usedEvents": []
+						}
+					],
+					"src": "31:75:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

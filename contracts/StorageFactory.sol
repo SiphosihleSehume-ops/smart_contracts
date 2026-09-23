@@ -5,9 +5,11 @@ import "./SimpleContract.sol";
 
 // This contract serves as a `factory` for creating othert smart contracts
 contract StorageFactory {
-    SimpleContract[] public simpleContract;
+    SimpleContract[] public simpleContracts;
 
     function createSimpleContract() public {
         simpleContract = new SimpleContract();
+        // Proceed to add the newly created contract to the array
+        simpleContracts.push(simpleContract);
     }
 }

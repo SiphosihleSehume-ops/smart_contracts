@@ -8,7 +8,7 @@ contract StorageFactory {
     SimpleContract[] public simpleContracts;
 
     function createSimpleContract() public {
-        simpleContract = new SimpleContract();
+        SimpleContract simpleContract = new SimpleContract();
         // Proceed to add the newly created contract to the array
         simpleContracts.push(simpleContract);
     }

@@ -16,7 +16,8 @@ contract SimpleContract {
 
     mapping(address => Owner) public users;
 
-    constructor() {
+    constructor(string _name) {
+        this.name = _name;
         owner = msg.sender;
     }
 
@@ -47,5 +48,10 @@ contract SimpleContract {
         if (user.balance >= _amount) {
             user.balance -= _amount;
         }
+    }
+
+    function addUser(string calldata _name, address calldata _id) public {
+        Owner memory u = new Owner();
+        users[_id] = u;
     }
 }

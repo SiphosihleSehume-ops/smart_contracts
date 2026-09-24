@@ -28,4 +28,13 @@ contract SimpleContract {
         user.name = _name;
     }
 
+    function retrieveName() public returns (string) {
+        return user.name;
+    }
+
+    function retrieveBalance() public returns (string) {
+        return user.balance;
+    }
+
+
 }

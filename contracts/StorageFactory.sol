@@ -12,4 +12,6 @@ contract StorageFactory {
         // Proceed to add the newly created contract to the array
         simpleContracts.push(simpleContract);
     }
+
+    
 }

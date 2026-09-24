@@ -7,12 +7,14 @@ contract SimpleContract {
 
     struct Owner {
         string name;
-        string balance;
+        uint256 balance;
         bool isActive;
         // datetime 
     }
 
     Owner public user;
+
+    mapping(address => Owner) public users;
 
     constructor() {
         owner = msg.sender;
@@ -20,6 +22,11 @@ contract SimpleContract {
 
     modifier OnlyOwner {
         require(msg.sender == owner, "Only the owner has rights to this action");
+        _;
+    }
+
+    modifier SufficientBalance {
+        require(user.balance > 0, "Insufficient balance");
         _;
     }
 
@@ -32,9 +39,13 @@ contract SimpleContract {
         return user.name;
     }
 
-    function retrieveBalance() public returns (string) {
+    function retrieveBalance() public returns (uint256) {
         return user.balance;
     }
 
-
+    function withdraw(uint _amount) public SufficientBalance {
+        if (user.balance >= _amount) {
+            user.balance -= _amount;
+        }
+    }
 }

@@ -114,18 +114,12 @@ contract SimpleContract {
         return user.balance;
     }
 
-    function withdraw(uint256 _amount)
-        public
-        SufficientBalance(_amount)
-    {
+    function withdraw(uint256 _amount) public SufficientBalance(_amount) {
         user.balance -= _amount;
         users[msg.sender].balance -= _amount;
     }
 
-    function addUser(
-        string calldata _name,
-        address _id
-    ) public {
+    function addUser(string calldata _name, address _id) public {
         users[_id] = Owner({
             name: _name,
             balance: 0,

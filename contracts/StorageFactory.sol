@@ -22,10 +22,9 @@ contract StorageFactory {
     // Think about:
     // Who will become the owner of the newly created SimpleContract?
     function createSimpleContract(string calldata _name) public {
-        SimpleContract _name = new SmartContract();
-        simpleContracts.push(_name);
+        SimpleContract cont = new SimpleContract(_name);
+        simpleContracts.push(cont);
     }
-
 
     // TODO: Create a function that returns how many
     // SimpleContract instances have been created.
@@ -46,7 +45,7 @@ contract StorageFactory {
     // Think about what Solidity stores when you put
     // a contract inside an array.
     function getContractAddress(uint _position) public view returns (address) {
-        SimpleContract cont = simpleContracts[position];
+        SimpleContract cont = simpleContracts[_position];
         address contAddress = address(cont);
         return contAddress;
     }
@@ -63,7 +62,7 @@ contract StorageFactory {
     // SimpleContract already has a public `owner` variable.
     function getContractOwner(uint _position) public view returns (address) {
         SimpleContract con = simpleContracts[_position];
-        User user = con.owner();
+        address user = con.owner();
         return address(user);
     }
 
@@ -92,7 +91,8 @@ contract StorageFactory {
     // Is it the person calling StorageFactory?
     // Or is it StorageFactory?
     function changeContractName(string calldata _newName, uint _position) public {
-        ///
+        SimpleContract cont = simpleContracts[_position];
+        cont.setName(_newName); 
     }
 
 
@@ -100,11 +100,9 @@ contract StorageFactory {
     // of a user from a selected SimpleContract.
     //
     // Again, think about how one contract calls another.
-    function getContractBalance(/* your parameter */)
-        public
-        view
-        returns (uint256)
-    {
-        
+    function getContractBalance(uint _position) public view returns (uint256) {
+        SimpleContract con = simpleContracts[_position];
+        uint256 balance = con.retrieveBalance();
+        return balance;
     }
 }

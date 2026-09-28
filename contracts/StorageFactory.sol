@@ -21,8 +21,9 @@ contract StorageFactory {
     //
     // Think about:
     // Who will become the owner of the newly created SimpleContract?
-    function createSimpleContract(/* your parameter */) public {
-        
+    function createSimpleContract(string calldata _name) public {
+        SimpleContract _name = new SmartContract();
+        simpleContracts.push(_name);
     }
 
 
@@ -32,9 +33,8 @@ contract StorageFactory {
     // Hint:
     // Think about the length of the simpleContracts array.
     function getNumberOfContracts() public view returns (uint256) {
-        
+        return simpleContracts.length;
     }
-
 
     // TODO: Create a function that returns the address
     // of a SimpleContract at a particular index.
@@ -45,8 +45,10 @@ contract StorageFactory {
     //
     // Think about what Solidity stores when you put
     // a contract inside an array.
-    function getContractAddress(/* your parameter */) public view returns (address) {
-        
+    function getContractAddress(uint _position) public view returns (address) {
+        SimpleContract cont = simpleContracts[position];
+        address contAddress = address(cont);
+        return contAddress;
     }
 
 
@@ -59,8 +61,10 @@ contract StorageFactory {
     //
     // Hint:
     // SimpleContract already has a public `owner` variable.
-    function getContractOwner(/* your parameter */) public view returns (address) {
-        
+    function getContractOwner(uint _position) public view returns (address) {
+        SimpleContract con = simpleContracts[_position];
+        User user = con.owner();
+        return address(user);
     }
 
 
@@ -70,8 +74,10 @@ contract StorageFactory {
     // Think about:
     // - How can StorageFactory communicate with another contract?
     // - Which function in SimpleContract gives you the name?
-    function getContractName(/* your parameter */) public view returns (string memory) {
-        
+    function getContractName(uint _position) public view returns (string memory) {
+        SimpleContract con = simpleContracts[_position];
+        string memory conName = con.retrieveName();
+        return conName;
     }
 
 
@@ -85,11 +91,8 @@ contract StorageFactory {
     // Who is actually calling SimpleContract?
     // Is it the person calling StorageFactory?
     // Or is it StorageFactory?
-    function changeContractName(
-        /* contract index */,
-        /* new name */
-    ) public {
-        
+    function changeContractName(string calldata _newName, uint _position) public {
+        ///
     }
 
 
